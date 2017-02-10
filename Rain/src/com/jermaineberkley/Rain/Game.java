@@ -57,7 +57,7 @@ public class Game extends Canvas implements Runnable {
 		frame = new JFrame();
 		// initiating the keyboard
 		key = new Keyboard();
-		// remeber to always add the input to the key listener
+		// Remember to always add the input to the key listener
 		addKeyListener(key);
 	};
 	

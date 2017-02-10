@@ -4,7 +4,8 @@ import java.util.Random;
 
 public class Screen {
 	
-	private int width, height;
+	private int width;
+	private int height;
 	public int[] pixels;
 	public final int MAP_SIZE = 64;
 	public final int MAP_SIZE_MASK = MAP_SIZE - 1;
@@ -22,6 +23,7 @@ public class Screen {
 		
 		for (int i = 0; i < MAP_SIZE * MAP_SIZE; i++){
 			tiles[i] = random.nextInt(0x0ffffff);
+			tiles[0] = 0;
 		}
 	};
 	
@@ -43,7 +45,7 @@ public class Screen {
 				// find the tile to be render at a specific place
 				int tile_index = ((xx >> 4) & MAP_SIZE_MASK) + ((yy >> 4) & MAP_SIZE_MASK) * MAP_SIZE;
 				
-				pixels[x + y * width] = Sprite.grass.pixels[(x % 15) + (y & 15) * 16];
+				pixels[x + y * width] = Sprite.grass.pixels[(x % 15) + (y & 15) * Sprite.grass.SIZE];
 			}
 		}
 	};

@@ -12,7 +12,7 @@ public class Spritesheet {
 	// an array containing every pixel on the screen
 	public int[] pixels;
 	
-	public static Spritesheet tiles = new Spritesheet("/textures/spritesheet.png", 256);
+	public static Spritesheet tiles = new Spritesheet("/Textures/spritesheet.png", 256);
 	
 	/* this method takes the file path of an image, in this case a spritesheet, 
 	   sets the final (const) SIZE, and sets it to the value of the parameter path, and

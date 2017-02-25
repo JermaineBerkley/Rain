@@ -86,6 +86,8 @@ public class Game extends Canvas implements Runnable {
 		double delta = 0;
 		int frames = 0;
 		int updates = 0;                                                                                 
+		// focuses the player's controls to the canvas from init
+		requestFocus();
 		
 		while(running){
 			long now = System.nanoTime();

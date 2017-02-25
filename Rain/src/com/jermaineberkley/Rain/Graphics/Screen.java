@@ -36,16 +36,14 @@ public class Screen {
 	public void render(int x_offset, int y_offset){
 
 		for(int y = 0; y < height; y++){
-			int yy = y + y_offset;
-			//if(yy < 0 || yy >= height){ break; }
+			// y pixel
+			int yp = y + y_offset;
+			if (yp < 0 || yp >= height ) { continue; }
 			for(int x = 0; x < width; x++){
-				int xx = x + x_offset;
-				//if(xx < 0 || xx >= width){ break; }
-				
-				// find the tile to be render at a specific place
-				int tile_index = ((xx >> 4) & MAP_SIZE_MASK) + ((yy >> 4) & MAP_SIZE_MASK) * MAP_SIZE;
-				
-				pixels[x + y * width] = Sprite.grass.pixels[(x % 15) + (y & 15) * Sprite.grass.SIZE];
+				// x pixel
+				int xp = x + x_offset;
+				if (xp < 0 || xp >= width ) { continue; }
+				pixels[(x + x_offset) + (y + y_offset) * width] = Sprite.grass.pixels[(x % 15) + (y & 15) * Sprite.grass.SIZE];
 			}
 		}
 	};

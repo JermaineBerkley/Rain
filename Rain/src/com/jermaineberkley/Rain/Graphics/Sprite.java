@@ -12,7 +12,7 @@ public class Sprite {
 	public int[] pixels;
 	// 
 	private Spritesheet sheet;
-	
+	// we make instances of the sprite class inside the class itself, because they are static, meaning these coordiantes will never change
 	public static Sprite grass = new Sprite(16, 0, 0, Spritesheet.tiles);
 	
 	public Sprite (int size, int x, int y, Spritesheet sheet) {
